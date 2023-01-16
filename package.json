@@ -1,17 +1,34 @@
 {
-  "name": "express-hello-world",
+  "name": "smart-brain-ZTM-render",
   "version": "1.0.0",
-  "description": "Express Hello World on Render",
+  "description": "Final project using Node.js, Express.js, Clarifai API, and React to build a user application for facial recognition.",
   "main": "app.js",
-  "repository": "https://github.com/render-examples/express-hello-world",
-  "author": "Render Developers",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProsperousHeart/smart-brain-ZTM-render"
+  },
+  "author": "Kassandra Keeton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProsperousHeart/smart-brain-ZTM-render/issues"
+  },
+  "homepage": "https://github.com/ProsperousHeart/smart-brain-ZTM-render#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
   "private": false,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "start:dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "bcrypt-nodejs": "^0.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "knex": "^2.4.0",
+    "pg": "^8.8.0"
   },
   "engines": {
     "node": ">=14"
