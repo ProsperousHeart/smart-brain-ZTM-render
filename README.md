@@ -1,6 +1,6 @@
 # Smart Brain Explainer
 
-This code repo is the PROD version of the final project I completed as part of the 40+ hour ZTM Web Developer Bootcamp. (This is an affiliate link, and should you decide to purchase I may receive compensation.)
+This code repo is the PROD version of the final project I completed as part of the 40+ hour [ZTM Web Developer Bootcamp](https://academy.zerotomastery.io/a/aff_jcfsdgcx/external?affcode=441520_5cipxkgo). (This is an affiliate link, and should you decide to purchase I may receive compensation.)
 
 It is also a mixture of the [template from Render](https://github.com/render-examples/express-hello-world) for their [Node.js](https://nodejs.org/) setup. (This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com) -- which is deployed at [https://express.onrender.com](https://express.onrender.com).)
 
