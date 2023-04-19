@@ -4,28 +4,34 @@ const path = require('path');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 
+const homedir = require("./controllers/homedir");
 const register = require("./controllers/register");
 const signIn = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
 const port = process.env.PORT || 3001;
-const DB_HOST = process.env.ztm_sbdb_host;
-const DB_PORT = process.env.ztm_sbdb_port;
-const DB_USER = process.env.ztm_sbdb_user;
-const DB_PW = process.env.ztm_sbdb_pw;
-const DB_NAME = process.env.ztm_sbdb;
+// const DB_HOST = process.env.ztm_sbdb_host;
+// const DB_PORT = process.env.ztm_sbdb_port;
+// const DB_USER = process.env.ztm_sbdb_user;
+// const DB_PW = process.env.ztm_sbdb_pw;
+// const DB_NAME = process.env.ztm_sbdb;
 
+// const db = require('knex')({
+//   client: 'pg',
+//   connection: {
+//       host : DB_HOST,
+//       port : DB_PORT,
+//       user: DB_USER,
+//       password : DB_PW,
+//       database : DB_NAME
+//   }
+//   //searchPath: ['knex', 'public'],
+// });
 const db = require('knex')({
   client: 'pg',
-  connection: {
-      host : DB_HOST,
-      port : DB_PORT,
-      user: DB_USER,
-      password : DB_PW,
-      database : DB_NAME
-  }
-  //searchPath: ['knex', 'public'],
+  connection: process.env.PG_CONNECTION_STRING,
+  searchPath: ['knex', 'public'],
 });
 
 const app = express();
@@ -50,6 +56,7 @@ function getUser(id) {
 }
 
 app.get("/", (req, res) => res.status(200).sendFile(path.join(__dirname, '/public/index.html')));
+// app.get("/", (req, res) => { homedir.handleHomeConnection(req, res, db, bcrypt) }); // connect to DB & check for (or create) required tables
 
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) }) // dependency injuection;
 // app.post('/signin', (req, res) => { signIn.handleSignIn(req, res, db, bcrypt) })
